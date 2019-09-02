@@ -16,21 +16,25 @@ if(!$consulta){
     exit;
 } 
 
-if(mysqli_fetch_assoc($consulta)) {
-	if($var1==1){
+if($dato = mysqli_fetch_assoc($consulta)) {
+	$var3 = $dato['usuario']; 
+	if($var1==1){	
 		session_start();
 		$_SESSION['administrador']=$var2;
+		$_SESSION['usuario']=$var3;
 		header("Location: http://localhost/practica2/ingresoadm.php");
 		exit(); 
 	}
 	if($var1==2){
 		session_start();
 		$_SESSION['maestro']=$var2;
+		$_SESSION['usuario']=$var3;
 		header("Location: http://localhost/practica2/ingresomtro.php");
 	}
 	if($var1==3){
 		session_start();
 		$_SESSION['alumno']=$var2;
+		$_SESSION['usuario']=$var3;
 		header("Location: http://localhost/practica2/ingresoalum.php");
 	}
 } 
