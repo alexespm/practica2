@@ -6,11 +6,7 @@ $nombre = $_POST['usuario'];
 $password = $_POST['password'];
 
 $consulta = mysqli_query ($conn, "SELECT * FROM usuarios WHERE usuario = '$nombre' AND password = '$password'");  
-$consulta2 = mysqli_query ($conn, "SELECT rol, usu_id FROM usuarios WHERE usuario = '$nombre' AND password = '$password'");  
-if($row = mysqli_fetch_array($consulta2)){
-	$var1 = $row["rol"];
-	$var2 = $row["usu_id"];
-}
+
 if(!$consulta){ 
     echo mysqli_error($mysqli);
     exit;
@@ -18,6 +14,8 @@ if(!$consulta){
 
 if($dato = mysqli_fetch_assoc($consulta)) {
 	$var3 = $dato['usuario']; 
+	$var1 = $dato["rol"];
+	$var2 = $dato["usu_id"];
 	if($var1==1){	
 		session_start();
 		$_SESSION['administrador']=$var2;
