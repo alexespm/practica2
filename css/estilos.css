@@ -42,3 +42,10 @@ select{
 #boton{
 	text-align: center;
 }
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
