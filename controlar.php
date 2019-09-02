@@ -16,7 +16,7 @@ if(!$consulta){
     exit;
 } 
 
-if($user = mysqli_fetch_assoc($consulta)) {
+if(mysqli_fetch_assoc($consulta)) {
 	if($var1==1){
 		session_start();
 		$_SESSION['administrador']=$var2;
