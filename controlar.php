@@ -30,12 +30,14 @@ if($dato = mysqli_fetch_assoc($consulta)) {
 		$_SESSION['maestro']=$var2;
 		$_SESSION['usuario']=$var3;
 		header("Location: http://localhost/practica2/ingresomtro.php");
+		exit(); 
 	}
 	if($var1==3){
 		session_start();
 		$_SESSION['alumno']=$var2;
 		$_SESSION['usuario']=$var3;
 		header("Location: http://localhost/practica2/ingresoalum.php");
+		exit(); 
 	}
 } 
 else {
