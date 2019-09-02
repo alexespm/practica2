@@ -22,21 +22,21 @@ if($dato = mysqli_fetch_assoc($consulta)) {
 		session_start();
 		$_SESSION['administrador']=$var2;
 		$_SESSION['usuario']=$var3;
-		header("Location: http://localhost/practica2/ingresoadm.php");
+		header("Location: ingresoadm.php");
 		exit(); 
 	}
 	if($var1==2){
 		session_start();
 		$_SESSION['maestro']=$var2;
 		$_SESSION['usuario']=$var3;
-		header("Location: http://localhost/practica2/ingresomtro.php");
+		header("Location: ingresomtro.php");
 		exit(); 
 	}
 	if($var1==3){
 		session_start();
 		$_SESSION['alumno']=$var2;
 		$_SESSION['usuario']=$var3;
-		header("Location: http://localhost/practica2/ingresoalum.php");
+		header("Location: ingresoalum.php");
 		exit(); 
 	}
 } 
