@@ -13,9 +13,9 @@ if(!$consulta){
 } 
 
 if($dato = mysqli_fetch_assoc($consulta)) {
-	$var3 = $dato['usuario']; 
 	$var1 = $dato["rol"];
 	$var2 = $dato["usu_id"];
+	$var3 = $dato['usuario']; 
 	if($var1==1){	
 		session_start();
 		$_SESSION['administrador']=$var2;
